@@ -1,0 +1,124 @@
+/* Container for the carousel with animated background */
+.carousel-wrapper {
+  width: 100%; /* Wider to give focus on images */
+  margin: 20px auto;
+  padding: 30px;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); /* Gradient background */
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient background animation */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Slide inside the carousel */
+.carousel-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Carousel image with more depth */
+.carousel-image {
+  width: 100%;
+  height: 550px; /* Increased height */
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Added shadow for depth */
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+/* Image hover effect to emphasize */
+.carousel-slide:hover .carousel-image {
+  transform: scale(1.05); /* More zoom-in */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25); /* Enhance shadow on hover */
+}
+
+/* Overlay text styling */
+.carousel-overlay {
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px); /* Blur background for a glass effect */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  text-align: left;
+}
+
+/* Display overlay text on hover */
+.carousel-slide:hover .carousel-overlay {
+  opacity: 1;
+}
+
+/* Title text styling in the overlay */
+.overlay-title {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  color: #ffdd57;
+  letter-spacing: 2px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Description text styling in the overlay */
+.overlay-description {
+  font-size: 16px;
+  color: #f1f1f1;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+/* Media query for tablet view */
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    width: 95%; /* Slightly wider on smaller screens */
+  }
+
+  .carousel-image {
+    height: 400px; /* Reduce height */
+  }
+
+  .overlay-title {
+    font-size: 20px; /* Responsive typography */
+  }
+
+  .overlay-description {
+    font-size: 14px;
+  }
+}
+
+/* Media query for mobile view */
+@media (max-width: 480px) {
+  .carousel-image {
+    height: 250px; /* Smaller height for mobile */
+  }
+
+  .overlay-title {
+    font-size: 18px; /* Adjust title size */
+  }
+
+  .overlay-description {
+    font-size: 12px;
+  }
+}

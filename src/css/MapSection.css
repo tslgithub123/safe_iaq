@@ -1,0 +1,51 @@
+/* General styles for the map section */
+.map-section {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Flexbox layout for images */
+.map-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Individual map images */
+.map-image {
+  max-width: 50%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect for map images */
+.map-image:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive styles for tablets and smaller devices */
+@media (max-width: 1024px) {
+  .map-images {
+    gap: 15px;
+  }
+
+  .map-image {
+    max-width: 45%;
+  }
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+  .map-images {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .map-image {
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+}

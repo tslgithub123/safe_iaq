@@ -1,0 +1,59 @@
+.instruments-section {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .instruments-section h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .instrument {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .instrument img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .instrument-text {
+    max-width: 600px;
+  }
+  
+  .instrument-text h5 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+  
+  .instrument-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .reverse {
+    flex-direction: row-reverse;
+  }
+  
+  @media (max-width: 768px) {
+    .instrument {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .instrument img {
+      width: 100%;
+    }
+  
+    .instrument-text {
+      max-width: none;
+    }
+  }
+  
